@@ -4,15 +4,18 @@
     width: 100% !important;
   }
 </style>
+
 <div id="cusdis_thread"
-  data-host="https://cusdis.com"
-  data-app-id="e720d360-8876-4233-bfa5-2ec5b6443aff"
-  data-page-id="{{ PAGE_ID }}"
-  data-page-url="{{ PAGE_URL }}"
-  data-page-title="{{ PAGE_TITLE }}"
-  style="width: 100%; max-width: 100%; height: auto;"
-></div>
+     data-host="https://cusdis.com"
+     data-app-id="e720d360-8876-4233-bfa5-2ec5b6443aff"
+     data-page-id="{{ page.url }}"
+     data-page-url="{{ site.url }}{{ page.url }}"
+     data-page-title="{{ page.title }}"
+     style="width: 100%; max-width: 100%; height: auto;">
+</div>
+
 <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+
 
 
 
