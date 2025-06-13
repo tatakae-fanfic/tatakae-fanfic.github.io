@@ -1,6 +1,7 @@
 ---
 title: 测试1
 nav_order: 2
+layout: default
 ---
 
 # 👩‍💻 标题测试
