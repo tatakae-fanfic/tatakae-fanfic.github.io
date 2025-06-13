@@ -3,6 +3,7 @@ title: 《这也是一篇好吃的文》
 parent: sample-某角色
 nav_order: 2
 layout: default
+permalink: /test1/subtest2.html
 ---
 # 📄 《这也是一篇很好吃的文》
 
