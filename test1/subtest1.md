@@ -1,13 +1,31 @@
 ---
-title: 测试1-文1
-parent: 测试1
+title: 《这是一篇很好吃的文》
+parent: sample-某角色
 nav_order: 1
 layout: default
 ---
 
-# 📄 test1-文1
+# 📄 《这是一篇很好吃的文》
 
-这是某篇雷文
+作者：tatakaefanfic
+
+角色：某角色
+
+cp：某角色/某角色
+
+左右是否有意义：或许吧
+
+年龄向：全年龄向
+
+发布平台：不存在
+
+---
+
+好吃，总之就是好吃
+
+好吃多吃
+
+---
 
 评论测试
 {% include comments.html %}
