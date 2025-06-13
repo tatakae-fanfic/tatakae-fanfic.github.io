@@ -2,6 +2,7 @@
 title: 《这是一篇很好吃的文》
 parent: sample-某角色
 nav_order: 1
+permalink: /test1/subtest1.html
 layout: default
 ---
 
