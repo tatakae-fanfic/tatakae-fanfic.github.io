@@ -8,3 +8,6 @@ layout: default
 # 📄 test1-文1
 
 这是某篇雷文
+
+评论测试
+{% include comments.html %}
