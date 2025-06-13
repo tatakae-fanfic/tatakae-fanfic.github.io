@@ -55,7 +55,7 @@ nav_order: 1
 感谢你的理解与支持！
 
 ## 更新日志
-- 2025-06-13 导入了Jekyll主题；插入了Cusdis评论插件
+- 2025-06-13 导入了Jekyll主题；插入了Cusdis评论插件；设置了mircrosoft form内嵌用作匿名投稿和反馈。
 
 ----
 
