@@ -28,16 +28,8 @@ cp：某角色/某角色
 
 ---
 
-{% assign pages_list = site.pages | where: "layout", "default" | sort: "nav_order" %}
-{% assign index = pages_list | index_of: page %}
-
-{% if index > 0 %}
-➡️ 上一篇：[{{ pages_list[index-1].title }}]({{ pages_list[index-1].url }})
-{% endif %}
-
-{% if index < pages_list.size - 1 %}
-⬅️ 下一篇：[{{ pages_list[index+1].title }}]({{ pages_list[index+1].url }})
-{% endif %}
+上下篇测试
+{% include prev_next.html %}
 
 
 ---
