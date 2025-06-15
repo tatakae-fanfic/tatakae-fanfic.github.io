@@ -1,18 +1,18 @@
-{% assign all_test1_pages = site.pages | where_exp: "item", "item.path contains 'test1/'" | sort: "nav_order" %}
-{% assign current_index = all_test1_pages | index: page %}
+{% assign test_pages = site.pages | where_exp: "item", "item.path contains 'test1/' and item.nav_order" | sort: "nav_order" %}
+{% assign this_index = test_pages | index: page %}
 
 <div style="margin-top: 2em; border-top: 1px dashed #ccc; padding-top: 1em;">
-  {% if current_index > 0 %}
+  {% if this_index > 0 %}
     上一篇：
-    <a href="{{ all_test1_pages[current_index | minus: 1].url }}">
-      {{ all_test1_pages[current_index | minus: 1].title }}
+    <a href="{{ test_pages[this_index | minus: 1].url }}">
+      {{ test_pages[this_index | minus: 1].title }}
     </a><br>
   {% endif %}
 
-  {% if current_index < all_test1_pages.size | minus: 1 %}
+  {% if this_index < test_pages.size | minus: 1 %}
     下一篇：
-    <a href="{{ all_test1_pages[current_index | plus: 1].url }}">
-      {{ all_test1_pages[current_index | plus: 1].title }}
+    <a href="{{ test_pages[this_index | plus: 1].url }}">
+      {{ test_pages[this_index | plus: 1].title }}
     </a>
   {% endif %}
 </div>
