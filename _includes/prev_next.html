@@ -1,0 +1,17 @@
+{% assign sorted_pages = site.pages | where: "layout", "default" | sort: "nav_order" %}
+{% assign current_index = sorted_pages | index: page %}
+
+<div style="margin-top: 3em; border-top: 1px dashed #ccc; padding-top: 1em;">
+  {% if current_index > 0 %}
+    上一篇：<a href="{{ sorted_pages[current_index | minus: 1].url }}">
+      {{ sorted_pages[current_index | minus: 1].title }}
+    </a>
+    <br>
+  {% endif %}
+
+  {% if current_index < sorted_pages.size - 1 %}
+    下一篇：<a href="{{ sorted_pages[current_index | plus: 1].url }}">
+      {{ sorted_pages[current_index | plus: 1].title }}
+    </a>
+  {% endif %}
+</div>
