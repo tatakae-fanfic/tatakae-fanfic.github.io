@@ -1,21 +1,31 @@
-{% assign all_pages = site.pages | where: "layout", "default" | sort: "nav_order" %}
-{% assign this_index = all_pages | index: page %}
+// public/assets/js/prev-next.js
 
-<div style="margin-top: 2em; border-top: 1px dashed #ccc; padding-top: 1em;">
-  {% if this_index > 0 %}
-    上一篇：
-    <a href="{{ all_pages[this_index | minus: 1].url }}">
-      {{ all_pages[this_index | minus: 1].title }}
-    </a><br>
-  {% endif %}
+const pages = [
+  { order: 1, title: "第一章：勇者归来", url: "/test1/subtest1.html" },
+  { order: 2, title: "第二章：断裂的命运", url: "/test1/subtest2.html" },
+  // ... 可以继续补充下去
+];
 
-  {% if this_index < all_pages.size | minus: 1 %}
-    下一篇：
-    <a href="{{ all_pages[this_index | plus: 1].url }}">
-      {{ all_pages[this_index | plus: 1].title }}
-    </a>
-  {% endif %}
-</div>
+document.addEventListener("DOMContentLoaded", function () {
+  const container = document.getElementById("prev-next-box");
+  if (!container) return;
+
+  const currentOrder = parseInt(container.dataset.order);
+  if (!currentOrder) return;
+
+  const prev = pages.find((p) => p.order === currentOrder - 1);
+  const next = pages.find((p) => p.order === currentOrder + 1);
+
+  let html = "";
+  if (prev) {
+    html += `上一篇：<a href="${prev.url}">${prev.title}</a><br>`;
+  }
+  if (next) {
+    html += `下一篇：<a href="${next.url}">${next.title}</a>`;
+  }
+
+  container.innerHTML = html;
+});
 
 
 
