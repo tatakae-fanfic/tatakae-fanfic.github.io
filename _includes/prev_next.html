@@ -1,17 +1,23 @@
-{% assign sorted_pages = site.html_pages | where: "layout", "default" | sort: "nav_order" %}
-{% assign current_index = sorted_pages | index: page %}
+{% comment %}
+过滤出与当前页面相同 parent 的页面，并按 nav_order 排序
+{% endcomment %}
+{% assign siblings = site.pages | where: "layout", "default" | where: "parent", page.parent | sort: "nav_order" %}
+{% assign index = siblings | index: page %}
 
-<div style="margin-top: 3em; border-top: 1px dashed #ccc; padding-top: 1em;">
-  {% if current_index > 0 %}
-    上一篇：<a href="{{ sorted_pages[current_index | minus: 1].url }}">
-      {{ sorted_pages[current_index | minus: 1].title }}
+<div style="margin-top: 2em; border-top: 1px dashed #ccc; padding-top: 1em;">
+  {% if index > 0 %}
+    上一篇：
+    <a href="{{ siblings[index | minus: 1].url }}">
+      {{ siblings[index | minus: 1].title }}
     </a><br>
   {% endif %}
 
-  {% if current_index < sorted_pages.size - 1 %}
-    下一篇：<a href="{{ sorted_pages[current_index | plus: 1].url }}">
-      {{ sorted_pages[current_index | plus: 1].title }}
+  {% if index < siblings.size | minus: 1 %}
+    下一篇：
+    <a href="{{ siblings[index | plus: 1].url }}">
+      {{ siblings[index | plus: 1].title }}
     </a>
   {% endif %}
 </div>
+
 
