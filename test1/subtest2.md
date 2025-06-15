@@ -26,8 +26,9 @@ cp：某角色/某角色
 好吃多吃
 
 上下篇测试
-<div id="prev-next-box"></div>
+<div id="prev-next-box" data-series="test1"></div>
 <script src="/assets/js/prev-next.js"></script>
+
 
 
 ---
