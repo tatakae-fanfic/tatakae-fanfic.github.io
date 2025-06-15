@@ -28,9 +28,10 @@ cp：某角色/某角色
 
 ---
 
-上下篇测试（新）
-<div id="prev-next-box" data-order="1"></div>
+上下篇测试
+<div id="prev-next-box"></div>
 <script src="/assets/js/prev-next.js"></script>
+
 
 
 ---
