@@ -1,20 +1,25 @@
-fetch("/assets/js/pages.json")
-  .then((res) => res.json())
-  .then((pages) => {
-    const container = document.getElementById("prev-next-box");
-    if (!container) return;
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("prev-next-box");
+  if (!container) return;
 
-    const currentURL = window.location.pathname.replace(/\/$/, ""); // remove trailing slash
-    const index = pages.findIndex((p) => p.url === currentURL);
-    if (index === -1) return;
+  const series = container.dataset.series || "default";
+  const currentURL = window.location.pathname.replace(/\/$/, "");
 
-    let html = "";
-    if (pages[index - 1]) {
-      html += `上一篇：<a href="${pages[index - 1].url}">${pages[index - 1].title}</a><br>`;
-    }
-    if (pages[index + 1]) {
-      html += `下一篇：<a href="${pages[index + 1].url}">${pages[index + 1].title}</a>`;
-    }
+  fetch(`/assets/js/pages-${series}.json`)
+    .then((res) => res.json())
+    .then((pages) => {
+      const index = pages.findIndex((p) => p.url === currentURL);
+      if (index === -1) return;
 
-    container.innerHTML = html;
-  });
+      let html = "";
+      if (pages[index - 1]) {
+        html += `上一篇：<a href="${pages[index - 1].url}">${pages[index - 1].title}</a><br>`;
+      }
+      if (pages[index + 1]) {
+        html += `下一篇：<a href="${pages[index + 1].url}">${pages[index + 1].title}</a>`;
+      }
+
+      container.innerHTML = html;
+    });
+});
+
