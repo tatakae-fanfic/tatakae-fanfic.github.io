@@ -13,4 +13,4 @@ permalink: /submit/
 
 如果你不方便填写表单，或是想要推广制品或企划等，也可以发送邮件至：
 
-📮 [tatakaefanfic@hotmail.com](mailto:tatakaefanfic@hotmail.com)
+📮 [ttkffc2@gmail.com](mailto:ttkffc2@gmail.com)
